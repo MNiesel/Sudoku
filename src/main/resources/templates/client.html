@@ -1,0 +1,50 @@
+<?import org.teavm.flavour.validation.Converter?>
+<?use v:org.teavm.flavour.validation?>
+<?import java.util.Arrays?>
+
+<div>
+  <label>Please, enter your name</label>:
+  <input type="text" html:value="userName" html:change="userName"/>
+</div>
+<div>
+  Hello, <i><html:text value="userName"/></i>
+</div>
+
+<div>
+    Hello from me tooo
+</div>
+
+<table id="grid" border="1" style="border-collapse: collapse;">
+  <tr class="row">
+    <td class="cell"><input type="text" maxlength="1"></td>
+    <td class="cell"><input type="text" maxlength="1"></td>
+    <td class="cell"><input type="text" maxlength="1"></td>
+    <td class="cell"><input type="text" maxlength="1"></td>
+    <td class="cell"><input type="text" maxlength="1"></td>
+    <td class="cell"><input type="text" maxlength="1"></td>
+    <td class="cell"><input type="text" maxlength="1"></td>
+    <td class="cell"><input type="text" maxlength="1"></td>
+    <td class="cell"><input type="text" maxlength="1"></td>
+  </tr>
+
+  <tr class="row">
+    <td class="cell"><input type="text" maxlength="1"></td>
+    <td class="cell"><input type="text" maxlength="1"></td>
+    <td class="cell"><input type="text" maxlength="1"></td>
+    <td class="cell"><input type="text" maxlength="1"></td>
+    <td class="cell"><input type="text" maxlength="1"></td>
+    <td class="cell"><input type="text" maxlength="1"></td>
+    <td class="cell"><input type="text" maxlength="1"></td>
+    <td class="cell"><input type="text" maxlength="1"></td>
+    <td class="cell"><input type="text" maxlength="1"></td>
+    <!--row--></tr>
+</table>
+
+<std:foreach var="num" in="values">
+  <div>
+    <html:text value="num"/>
+  </div>
+</std:foreach>
+
+<button type="button" event:click="createField()"> Add </button>
+

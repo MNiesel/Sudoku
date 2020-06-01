@@ -1,0 +1,61 @@
+<?import org.teavm.flavour.validation.Converter?>
+<?use v:org.teavm.flavour.validation?>
+<?import java.util.Arrays?>
+
+<center>
+<div>
+<button type="button" event:click="easyGame()">Leicht</button>
+    <button type="button" event:click="middleGame()">Mittel</button>
+    <button type="button" event:click="hardGame()">Schwer</button>
+</div>
+</center>
+
+<std:if condition="getGameStarted()">
+    <div>
+<table>
+    <tbody>
+<std:foreach var="i" in="range(0, 9)">
+    <tr>
+        <std:foreach var="j" in="range(0,9)">
+            <td>
+                <std:if condition="getValueAtPoint(i,j) == 0">
+                    <div>
+                    <input class="input cell" type="text" html:bidir-value="userName"  html:change="newEntry(i,j)"/>
+                    </div>
+                </std:if>
+                <std:if condition="getValueAtPoint(i,j) != 0">
+            <html:text value="getValueAtPoint(i,j)"/>
+                </std:if>
+            </td>
+
+        </std:foreach>
+
+    </tr>
+</std:foreach>
+    </tbody>
+</table>
+    </div>
+</std:if>
+
+<center>
+<div>
+<button type="button" event:click="getSudokuStatus()">Check</button>
+</div>
+</center>
+
+<center>
+<std:if condition="!checkSudokuStatus()">
+    <div>
+        <label>
+    Das Sudoku ist noch nicht gelöst
+        </label>
+    </div>
+</std:if>
+<std:if condition="checkSudokuStatus()">
+    <div>
+        <label>
+        Das Sudoku ist gelöst
+        </label>
+    </div>
+</std:if>
+</center>
